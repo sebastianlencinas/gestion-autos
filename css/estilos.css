@@ -1,0 +1,337 @@
+:root{
+  /* Paleta */
+  --color-background: #F9FFFF;
+  --color-light: #E2EDF7;
+  --color-light-blue: #8CB4D3;
+  --color-blue: #4B8CB6;
+  --color-dark: #1B100C;
+  --color-grey: #4D505D;
+  --color-nav: #F26F41;
+  --color-btn-hover: #A9E6DA;
+  --color-white: #FFFFFF;
+  --color-border: #222222;
+  --color-table-alt: #E6E6E6;
+
+  /* Tipografía */
+  --font-base: "Segoe UI", Arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-hero: 3rem;
+
+  /* Espaciados */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+
+  /* Layout */
+  --header-height: 5rem;
+  --radius: 8px;
+}
+
+/*****************************
+            RESET
+*****************************/
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+/*****************************
+            MAIN
+*****************************/
+
+body{
+  background-color: var(--color-backgroun);
+  margin: 0;
+  padding: 0;
+  /* Flexbox para centrar todo el contenido de la página respetando el header */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;    
+  padding-top: var(--header-height); /* Evita que el header tape el contenido */
+}
+
+.hero-img {
+  width: 100%;
+  height: 100vh; 
+  background-image: url("../assets/img/hero.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1
+{
+  position: absolute;
+  top: 30vh;
+  width: 100%;
+  text-align: center;
+  font-size: var(--font-size-hero);
+  color: var(--color-white);
+  text-shadow: 0 2px 6pc rgba(0,0,0,0.5);
+  margin: 0;
+  padding: 0 var(--space-md);
+  box-sizing: border-box;
+}
+
+h2
+{
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-dark);
+}
+
+p
+{
+  position: absolute;
+  bottom: 10vw;
+  max-width: 600px;
+  text-align: center;
+  color: var(--color-light);
+  font-size: var(--font-size-base);
+  top: 80vh;
+}
+
+/*****************************
+            NAVBAR
+*****************************/
+header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-nav);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 10;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+}
+
+nav li{
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-btn-hover);
+}
+
+nav li a{
+  color: var(--color-dark);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav li:hover{
+  background-color: var(--color-light-blue);
+  transition: background-color 0.2s ease;
+}
+
+
+/*****************************
+            FORMULARIO
+*****************************/
+.formulario {
+  width: 90vw;          /* Ancho responsivo para móviles */
+  max-width: 400px;     /* Ancho máximo ideal para un formulario limpio */
+  margin: var(--space-md) auto;
+  background-color: var(--color-white);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilos para las etiquetas */
+.formulario label {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  color: var(--color-dark);
+  font-weight: 600;
+  margin-top: var(--space-xs);
+  align-self: flex-start; /* Alinea el texto de la etiqueta a la izquierda */
+}
+
+input {
+   display: block;
+   box-sizing: border-box;
+   margin: var(--space-xs) 0 var(--space-sm) 0; /* Espaciado ordenado */
+   height: 40px;
+   width: 100%;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding: 0 var(--space-xs);
+   font-family: var(--font-base);
+}
+
+input.input-color {
+  padding: 2px;
+  cursor: pointer;
+}
+
+input:disabled,
+button:disabled
+{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+
+/*****************************
+            TABLAS
+*****************************/
+.table-container 
+{
+  width: 50vw;
+  height: 40vh;
+  overflow-y: auto;
+
+    /* Estilos visuales añadidos */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+table th 
+{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--color-blue); /* Cambiado a tu color azul de paleta */
+  color: var(--color-white);
+}
+
+
+th,td 
+{
+  padding: 0.8em;
+  text-align: left;
+  border: 1px solid #222;
+}
+
+td
+{
+  background-color: var(--color-light);
+}
+
+tr:nth-child(even) td{
+  background-color: #e6e6e6;
+}
+
+tr:hover td {
+  background-color: var(--color-light-blue);
+  color: var(--color-dark);
+}
+
+
+/*****************************
+            MENSAJES
+*****************************/
+.mensaje
+{
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mensaje.exito
+{
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.mensaje.error
+{
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+button,
+.btn {
+  /* Estilos base y tipografía */
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-dark);
+  
+  /* Colores y bordes */
+  background-color: var(--color-btn-hover); /* Color base menta */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  
+  /* Espaciado interno */
+  padding: var(--space-xs) var(--space-md);
+  margin: var(--space-xs) auto; /* El 'auto' ayuda a centrar horizontalmente */
+  
+  /* Interactividad */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  /* Para asegurar que se comporte bien con márgenes y anchos */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efecto Hover (Al pasar el mouse) */
+button:hover,
+.btn:hover {
+  background-color: var(--color-light-blue); /* Cambia al azul claro */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px); /* Efecto sutil de elevación */
+}
+
+/* Efecto Active (Al hacer clic) */
+button:active,
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Estado deshabilitado (Ya lo tenías, se complementa) */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}

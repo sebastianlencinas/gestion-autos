@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../html/consulta.html">Consultar</a></li>
+                <li><a href="../html/alta.html">Agregar</a></li>
+                <li><a href="../html/modificar.html">Modificar</a></li>
+                <li><a href="../html/eliminar.html">Eliminar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Consulta</h2>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    <section class="formulario">
+        <form id="form-consulta">
+            <label for="id">Consultar auto por ID (vacío = todos):</label>
+            <input type="number" id="id" name="id">
+
+            <button class="btn" type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <div class= "table-container">
+        <table>
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script src="../js/api.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/consulta.js"></script>
+</body>
+</html>

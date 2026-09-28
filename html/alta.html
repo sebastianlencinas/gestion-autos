@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../html/consulta.html">Consultar</a></li>
+                <li><a href="../html/alta.html">Agregar</a></li>
+                <li><a href="../html/modificar.html">Modificar</a></li>
+                <li><a href="../html/eliminar.html">Eliminar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Alta</h2>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    <section class="formulario">
+        <form id="form-alta">
+
+            <label for="id">ID: </label>
+            <input type="number" id="id" name="id" placeholder="opcional"
+                    min="1" max="1000000000000">
+
+            <label for="marca">Marca: </label>
+            <input type="text" id="marca" name="marca" minlength="2" maxlength="30" required>
+
+            <label for="precio">Precio: </label>
+            <input type="number" id="precio" name="precio"
+                    min="1" max="1000000000000" required>
+
+            <label for="color">Color: </label>
+            <input class="input-color" type="color" id="color" name="color" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/alta.js"></script>
+</body>
+</html>
